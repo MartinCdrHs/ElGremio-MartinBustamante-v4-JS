@@ -16,7 +16,7 @@ const reservarJuego = (listaJuegos) => {
     let nombreJuego = ""
 
     do {
-        nombreJuego = prompt ("Qué juego quereis reservar?"+"\n\n"+listaJuegos.join("\n"))
+        nombreJuego = prompt ("Qué juego quieres reservar?"+"\n\n"+listaJuegos.join("\n"))
         const juego = juegos.find(elemento => elemento.nombre.toLowerCase() === nombreJuego.toLowerCase())
         
         
@@ -26,7 +26,7 @@ const reservarJuego = (listaJuegos) => {
             alert ("El juego que habeis ingresado no está en nuestro arcón, eligid uno de la lista")
         }
 
-        masJuegos = confirm ("Deseais reservar otro juego?")
+        masJuegos = confirm ("Deseas reservar otro juego?")
     } while (masJuegos);
 
     mostrarCarrito ()
@@ -34,7 +34,7 @@ const reservarJuego = (listaJuegos) => {
 
 const verificarStock = (stockJuego, juego) => {
     if (stockJuego < 1) {
-        alert ("Temo que ya no nos quedan más de esos Aventureros") 
+        alert ("Temo que ya no nos quedan más de esos, Aventurero") 
     }else {
         juego.stock = stockJuego - 1
 
