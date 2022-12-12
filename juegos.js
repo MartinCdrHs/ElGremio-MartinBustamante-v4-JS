@@ -1,31 +1,31 @@
 const juegos = [
     {
-        nombre: "gloomhaven",
+        nombre: "Gloomhaven",
         precio: 800,
         stock: 0,
     },
     {
-        nombre: "munchkin",
+        nombre: "Munchkin",
         precio: 700,
         stock: 2,
     },
     {
-        nombre: "no lo testeamos ni un poco",
+        nombre: "No Lo Testeamos Ni Un Poco",
         precio: 500,
         stock: 3,
     },
     {
-        nombre: "dungeons and drinks",
+        nombre: "Dungeons and Drinks",
         precio: 600,
         stock: 3,
     },
     {
-        nombre: "jumanji",
+        nombre: "Jumanji",
         precio: 800,
         stock: 1,
     },
     {
-        nombre: "here to slay",
+        nombre: "Here to Slay",
         precio: 600,
         stock: 2,
     }
