@@ -29,7 +29,7 @@ const reservarJuego = (listaJuegos) => {
         masJuegos = confirm ("Deseais reservar otro juego?")
     } while (masJuegos);
 
-    console.log (carrito)
+    mostrarCarrito ()
 };
 
 const verificarStock = (stockJuego, juego) => {
@@ -53,6 +53,31 @@ const agregarCarrito = (juego) => {
     }
 }
 
+const mostrarCarrito = () => {
+    const bolsa = carrito.map (item => "- "+item.nombre+" - $"+item.precio)
+    const confirmarBolsa = confirm ("¿Estás seguro de que quieres agregar a tu bolsa estos juegos?"+
+    "\n\n"+bolsa.join("\n"))
 
+    if (confirmarBolsa) {
+        cerrarReserva (bolsa)
+    }else{
+        const itemBorrarBolsa = prompt ("Bien Aventurero, ¿qué quieres quitar?")
+        borrarDeBolsa (itemBorrarBolsa)
+    }
+}
+
+const borrarDeBolsa = (iBB) => {
+    carrito.forEach ((elemento, index) => {
+        if (elemento.nombre.toLowerCase() === iBB.toLowerCase()){
+            carrito.splice (index, 1)
+        }
+    })
+    mostrarCarrito()
+}
+
+const cerrarReserva = (bolsa) => {
+    const reservaTotal = carrito.reduce ((acc, elemento) => acc + elemento.precio ,0)
+    alert ("¡Todo listo Aventurero! El total por tus reservas es: $"+reservaTotal)
+}
 
 mostrarJuegos ()
